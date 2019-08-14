@@ -53,8 +53,7 @@ public class RNSoundDetectionModule extends ReactContextBaseJavaModule implement
             String convertedTrackInfo = new String("[");
             for(int i = 0; i < tracks.length; i++){
               convertedTrackInfo += i != 0 ? "," : "";
-              convertedTrackInfo += "{\"type\":\""
-                      + LEGASY_TRACK_CODES.get(tracks[i].getTrackType()) + "\"}";
+              convertedTrackInfo += "{\"type\":\"" + LEGASY_TRACK_CODES.get(tracks[i].getTrackType()) + "\"}";
             }
             convertedTrackInfo += "]";
             cb.invoke(convertedTrackInfo, null);
