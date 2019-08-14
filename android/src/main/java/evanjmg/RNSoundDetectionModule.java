@@ -18,7 +18,7 @@ public class RNSoundDetectionModule extends ReactContextBaseJavaModule implement
   private MediaPlayer mediaPlayer;
   private final ReactApplicationContext reactContext;
   private static final String ON_PREPARED = "OnPreparedEvent";
-  private static final Map<Integer, String> LEGASY_TRACK_CODES =
+  private static final Map<Integer, String> LEGACY_TRACK_CODES =
           Collections.unmodifiableMap(new HashMap<Integer, String>() {{
             put(0, "unknown");
             put(1, "video");
@@ -53,7 +53,7 @@ public class RNSoundDetectionModule extends ReactContextBaseJavaModule implement
             String convertedTrackInfo = new String("[");
             for(int i = 0; i < tracks.length; i++){
               convertedTrackInfo += i != 0 ? "," : "";
-              convertedTrackInfo += "{\"type\":\"" + LEGASY_TRACK_CODES.get(tracks[i].getTrackType()) + "\"}";
+              convertedTrackInfo += "{\"type\":\"" + LEGACY_TRACK_CODES.get(tracks[i].getTrackType()) + "\"}";
             }
             convertedTrackInfo += "]";
             cb.invoke(convertedTrackInfo, null);
